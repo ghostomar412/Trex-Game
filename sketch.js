@@ -189,7 +189,7 @@ function spawnObstacles(){
    
     //assign scale and lifetime to the obstacle           
     obstacle.scale = 0.5;
-    obstacle.lifetime = 300;
+    obstacle.lifetime = width/2;
    
    //add each obstacle to the group
     obstaclesGroup.add(obstacle);
@@ -206,7 +206,7 @@ function spawnClouds() {
     cloud.velocityX = -3;
     
      //assign lifetime to the variable
-    cloud.lifetime = 200;
+    cloud.lifetime = width/2;
     
     //adjust the depth
     cloud.depth = trex.depth;
@@ -225,7 +225,7 @@ if (frameCount % 60 === 0&&score>700) {
     bird.velocityX = -3;
     
      //assign lifetime to the variable
-    bird.lifetime = 200;
+    bird.lifetime = width/2;
     
    
     
