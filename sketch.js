@@ -51,7 +51,7 @@ function setup() {
   
   ground = createSprite(width/2,height-15,width,20);
   ground.addImage("ground",groundImage);
-  ground.x = ground.width /2;
+  ground.x =width /2;
   
    gameOver = createSprite(width/2,height/2-50);
   gameOver.addImage(gameOverImg);
@@ -101,11 +101,11 @@ function draw() {
       ground.velocityX=ground.velocityX-1;
     }
     if (ground.x < 0){
-      ground.x = ground.width/2;
+      ground.x =width/2;
     }
     
     //jump when the space key is pressed
-    if(keyDown("up")&& trex.y >= height-120) {
+    if(keyDown("up")&& trex.y >= height-38) {
         trex.velocityY = -12;
       jumpSound.play();
     }
@@ -200,7 +200,7 @@ function spawnClouds() {
   //write code here to spawn the clouds
   if (frameCount % 60 === 0) {
      cloud = createSprite(width+20,height-300);
-    cloud.y = Math.round(random(10,60));
+    cloud.y = Math.round(random(height-250,height-550));
     cloud.addImage(cloudImage);
     cloud.scale = 0.5;
     cloud.velocityX = -3;
@@ -219,7 +219,7 @@ function spawnClouds() {
 function spawnBirds(){
 if (frameCount % 60 === 0&&score>700) {
   bird = createSprite(width+20,height-300);
-    bird.y = Math.round(random(80,150));
+    bird.y = Math.round(random(height-50,height-100));
     bird.addAnimation("dinobirdImage",dinobirdImage);
     bird.scale = 0.5;
     bird.velocityX = -3;
@@ -245,6 +245,6 @@ gameState=1
  restart.visible = false;
 obstaclesGroup.destroyEach();
 cloudsGroup.destroyEach();
-
+birdGroup.destroyEach();
   score=0
 }
