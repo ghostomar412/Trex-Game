@@ -218,7 +218,7 @@ function spawnClouds() {
 }
 function spawnBirds(){
 if (frameCount % 60 === 0&&score>700) {
-  bird = createSprite(600,100,40,10);
+  bird = createSprite(width+20,height-300);
     bird.y = Math.round(random(80,150));
     bird.addAnimation("dinobirdImage",dinobirdImage);
     bird.scale = 0.5;
